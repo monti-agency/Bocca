@@ -80,9 +80,11 @@
       <span class="logo-text"><span data-i18n="brand">بوكا</span><small>Bocca Di Caffè</small></span>
     </a>
     <nav class="nav-links" data-i18n-aria="navAria" aria-label="التنقل الرئيسي">
+      <a href="index.html" aria-current="page" data-i18n="navHome">الرئيسية</a>
       <a href="about.html" data-i18n="navAbout">من نحن</a>
       <a href="cafe.html" data-i18n="navCafe">الكافيه</a>
       <a href="restaurant.html" data-i18n="navRest">المطعم</a>
+      <a href="reviews.html" data-i18n="navReviews">التقييمات</a>
       <a href="index.html#branches" data-i18n="navBranches">فروعنا</a>
       <a href="#contact" data-i18n="navContact">تواصل معنا</a>
     </nav>
@@ -96,12 +98,14 @@
 
 <div class="mnav" id="mnav" aria-hidden="true">
   <nav data-i18n-aria="navAria" aria-label="التنقل الرئيسي">
-    <a href="about.html" style="--i:0" data-i18n="navAbout">من نحن</a>
-    <a href="cafe.html" style="--i:1" data-i18n="navCafe">الكافيه</a>
-    <a href="restaurant.html" style="--i:2" data-i18n="navRest">المطعم</a>
-    <a href="index.html#branches" style="--i:3" data-i18n="navBranches">فروعنا</a>
-    <a href="#contact" style="--i:4" data-i18n="navContact">تواصل معنا</a>
-    <a class="btn btn-gold" href="#order" style="--i:5" data-i18n="navOrder">اطلب الآن</a>
+    <a href="index.html" aria-current="page" style="--i:0" data-i18n="navHome">الرئيسية</a>
+    <a href="about.html" style="--i:1" data-i18n="navAbout">من نحن</a>
+    <a href="cafe.html" style="--i:2" data-i18n="navCafe">الكافيه</a>
+    <a href="restaurant.html" style="--i:3" data-i18n="navRest">المطعم</a>
+    <a href="reviews.html" style="--i:4" data-i18n="navReviews">التقييمات</a>
+    <a href="index.html#branches" style="--i:5" data-i18n="navBranches">فروعنا</a>
+    <a href="#contact" style="--i:6" data-i18n="navContact">تواصل معنا</a>
+    <a class="btn btn-gold" href="#order" style="--i:7" data-i18n="navOrder">اطلب الآن</a>
   </nav>
 </div>
 
@@ -109,8 +113,8 @@
 
 <!-- HERO -->
 <section class="hero" aria-labelledby="hero-title">
+  <div class="hero-bg" aria-hidden="true"></div>
   <canvas id="particles" aria-hidden="true"></canvas>
-  <svg class="orn-bg" aria-hidden="true" focusable="false"><rect width="100%" height="100%" fill="url(#pat-star)"/></svg>
   <div class="container hero-grid">
     <div class="hero-copy">
       <div class="hl" style="--i:0"><span class="open-badge" data-i18n="openBadge">مفتوح حتى ١٢ منتصف الليل</span></div>
@@ -138,6 +142,30 @@
   </div>
 </section>
 
+<!-- GUEST REVIEWS STRIP -->
+<section class="proof" aria-label="Guest reviews">
+  <div class="container proof-in">
+    <a class="proof-rating" href="reviews.html">
+      <b><span aria-hidden="true">★</span> 4.4</b>
+      <small><span data-i18n="ratingG">خرائط جوجل</span><span data-i18n="ratingGsub"> · +3,700 تقييم</span></small>
+    </a>
+    <div class="proof-quotes" id="proofQuotes"></div>
+  </div>
+</section>
+
+<!-- BEST SELLERS -->
+<section class="section best" id="best" aria-labelledby="best-title">
+  <div class="container">
+    <div class="section-head">
+      <h2 id="best-title" data-i18n="bestTitle">الأكثر طلباً</h2>
+      <div class="divider" aria-hidden="true"><i></i><svg viewBox="0 0 24 24"><use href="#star8"/></svg><i></i></div>
+      <p data-i18n="bestSub">أصناف يحبها ضيوفنا، اختر وأطلب.</p>
+    </div>
+    <div class="best-row" id="bestRow"></div>
+    <div class="hero-cta" style="margin-top:28px"><a class="btn btn-gold" href="#sections" data-i18n="heroMenu">تصفّح القوائم</a></div>
+  </div>
+</section>
+
 <!-- FEATURE STRIP -->
 <section class="strip" aria-label="Highlights">
   <div class="container features" data-stagger>
@@ -161,6 +189,26 @@
         <span class="sec-body"><small data-i18n="cafeSmall">Café</small><h3 data-i18n="cafeName">الكافيه</h3><p data-i18n="cafeDesc">قهوة مختصة وتقطير، مشروبات باردة وساخنة، فطور ومخبوزات وحلويات.</p><ul class="sec-tags"><li data-i18n="tc1">المشروبات الساخنة</li><li data-i18n="tc2">القهوة الباردة</li><li data-i18n="tc3">الحلويات</li><li data-i18n="tc4">الفطور</li><li data-i18n="tc5">المخبوزات</li><li data-i18n="tc6">متجر بوكا</li></ul><span class="sec-more"><span data-count="cafe"></span> <span data-i18n="items">صنف</span> · <span data-i18n="browse">تصفح القائمة ←</span></span></span></a>
       <a class="sec-card sec-rest" href="restaurant.html"><span class="sec-img" style="background-image:url(assets/img/rest/r048.webp)"></span>
         <span class="sec-body"><small data-i18n="restSmall">Restaurant</small><h3 data-i18n="restName">المطعم</h3><p data-i18n="restDesc">باستا وبيتزا وريزوتو وستيك وسوشي، مع سلطات ومقبلات وحلويات.</p><ul class="sec-tags"><li data-i18n="tr1">السلطات</li><li data-i18n="tr2">الشوربات</li><li data-i18n="tr3">المقبلات</li><li data-i18n="tr4">الأطباق الرئيسية</li><li data-i18n="tr5">الأطباق الجانبية</li><li data-i18n="tr6">الريزوتو واللازانيا</li><li data-i18n="tr7">التاكو</li></ul><span class="sec-more"><span data-count="rest"></span> <span data-i18n="items">صنف</span> · <span data-i18n="browse">تصفح القائمة ←</span></span></span></a>
+    </div>
+  </div>
+</section>
+
+<!-- PLACE -->
+<section class="section place dark" id="place" aria-labelledby="place-title">
+  <svg class="orn-bg" aria-hidden="true" focusable="false"><rect width="100%" height="100%" fill="url(#pat-star)"/></svg>
+  <div class="container place-grid">
+    <div class="place-copy reveal">
+      <h2 id="place-title" data-i18n="placeTitle">زوروا بوكا في الباحة</h2>
+      <div class="divider" aria-hidden="true"><i></i><svg viewBox="0 0 24 24"><use href="#star8"/></svg><i></i></div>
+      <p data-i18n="placeSub">مكان هادئ بإطلالة جميلة، قهوة وفطور وحلويات ومطعم تحت سقف واحد.</p>
+      <div class="hero-cta">
+        <a class="btn btn-gold" target="_blank" rel="noopener noreferrer" href="https://www.google.com/maps/search/?api=1&amp;query=Bocca+do+cafe+Al+Bahah" data-i18n="placeBtn">الموقع على الخريطة</a>
+        <a class="btn btn-ghost" href="reviews.html" data-i18n="placeReviews">آراء ضيوفنا</a>
+      </div>
+    </div>
+    <div class="collage reveal" style="--d:120ms">
+      <div class="c-tall"><img src="assets/img/place/bocca-exterior-tall.webp" data-i18n-alt="placeImgAlt2" alt="مدخل بوكا دي كافيه والواجهة الزجاجية" width="672" height="1440" loading="lazy" decoding="async"></div>
+      <div class="c-wide"><img src="assets/img/place/bocca-exterior-wide.webp" data-i18n-alt="placeImgAlt1" alt="واجهة كافيه بوكا في الباحة" width="828" height="466" loading="lazy" decoding="async"></div>
     </div>
   </div>
 </section>
@@ -209,9 +257,11 @@
       <div>
         <h4 data-i18n="footSections">الأقسام</h4>
         <ul>
+          <li><a href="index.html" data-i18n="navHome">الرئيسية</a></li>
           <li><a href="about.html" data-i18n="navAbout">من نحن</a></li>
           <li><a href="cafe.html" data-i18n="cafeTitle">قائمة الكافيه</a></li>
           <li><a href="restaurant.html" data-i18n="restTitle">قائمة المطعم</a></li>
+          <li><a href="reviews.html" data-i18n="navReviews">التقييمات</a></li>
           <li><a href="index.html#branches" data-i18n="navBranches">فروعنا</a></li>
         </ul>
       </div>
@@ -233,6 +283,7 @@
 
 <script src="assets/config.js"></script>
 <script src="assets/menu-data.js"></script>
+<script src="assets/reviews-data.js"></script>
 <script src="assets/app.js"></script>
 </body>
 </html>

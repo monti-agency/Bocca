@@ -19,7 +19,7 @@
       title_rest: 'قائمة المطعم | بوكا',
       desc_rest: 'سلطات ومقبلات، باستا وبيتزا وريزوتو، ستيك وسوشي وحلويات.',
       brand: 'بوكا', skip: 'انتقل إلى المحتوى', logoAria: 'بوكا - الصفحة الرئيسية', navAria: 'التنقل الرئيسي',
-      navAbout: 'من نحن', navCafe: 'الكافيه', navRest: 'المطعم', navBranches: 'فروعنا', navContact: 'تواصل معنا', navOrder: 'اطلب الآن',
+      navHome: 'الرئيسية', navAbout: 'من نحن', navCafe: 'الكافيه', navRest: 'المطعم', navBranches: 'فروعنا', navReviews: 'التقييمات', navContact: 'تواصل معنا', navOrder: 'اطلب الآن',
       menuOpen: 'فتح القائمة', langAria: 'Switch to English', waFloat: 'اطلب عبر واتساب',
       waMsg: 'السلام عليكم، أرغب بالطلب من بوكا',
       openBadge: 'مفتوح حتى ١٢ منتصف الليل',
@@ -58,7 +58,24 @@
       restNote: 'الأسعار بالريال السعودي. السعرات الحرارية كما هي معروضة في قائمة المطعم.',
       empty: 'ما لقينا صنف بهذا الاسم. جرّب كلمة ثانية.',
       readyTitle: 'جاهز تطلب؟', readySub: 'اطلب عبر واتساب أو اتصل بنا أو اطلب عبر هنقرستيشن.',
-      sar: 'ر.س', kcal: 'سعرة'
+      sar: 'ر.س', kcal: 'سعرة',
+      bestTitle: 'الأكثر طلباً', bestSub: 'أصناف يحبها ضيوفنا، اختر وأطلب.',
+      title_reviews: 'آراء ضيوفنا | بوكا Bocca Di Caffè',
+      desc_reviews: 'اقرأ آراء ضيوف بوكا في الباحة عن القهوة والحلويات والمطعم، وشاركنا رأيك على خرائط جوجل.',
+      revTitle: 'آراء ضيوفنا', revSub: 'كلمات من ناس زاروا بوكا. رأيك يهمنا، ونقرأ كل تقييم.',
+      revBtnGoogle: 'قيّمنا على خرائط جوجل', revBtnRead: 'اقرأ الآراء', revAll: 'الكل', revBoth: 'الكافيه والمطعم',
+      revFilterAria: 'تصفية الآراء حسب القسم', revSortAria: 'ترتيب الآراء', revSortNew: 'الأحدث', revSortTop: 'الأعلى تقييماً',
+      revStars: '{n} من ٥ نجوم', revMore: 'اقرأ المزيد', revLess: 'عرض أقل', revShowMore: 'عرض المزيد من الآراء',
+      revEmpty: 'لا توجد آراء في هذا القسم بعد.', revNone: 'ستظهر آراء الضيوف هنا قريباً.',
+      revSample: 'نموذج', revFeatured: 'رأي مميز', revPhotoAlt: 'صورة من زيارة الضيف',
+      srcGoogle: 'خرائط جوجل', srcTiktok: 'تيك توك', srcSnap: 'سناب شات', srcWa: 'واتساب', srcDirect: 'زيارة مباشرة',
+      revCtaTitle: 'جرّبت بوكا؟ شاركنا رأيك', revCtaSub: 'رأيك يساعد غيرك على الاختيار، ويساعدنا نتحسّن.',
+      revCtaGoogle: 'قيّمنا على خرائط جوجل', revCtaGoogleSub: 'تقييم يستغرق دقيقة', revCtaWA: 'أرسل ملاحظتك', revCtaWAsub: 'عبر واتساب',
+      waFeedback: 'السلام عليكم، عندي ملاحظة عن بوكا',
+      revPhotoOpen: 'عرض صور الضيف', lbClose: 'إغلاق', lbPrev: 'الصورة السابقة', lbNext: 'الصورة التالية',
+      placeTitle: 'زوروا بوكا في الباحة', placeSub: 'مكان هادئ بإطلالة جميلة، قهوة وفطور وحلويات ومطعم تحت سقف واحد.',
+      placeImgAlt1: 'واجهة كافيه بوكا في الباحة', placeImgAlt2: 'مدخل بوكا دي كافيه والواجهة الزجاجية', placeBtn: 'الموقع على الخريطة', placeReviews: 'آراء ضيوفنا',
+      ourPlace: 'مكاننا'
     },
     en: {
       title_home: 'Bocca Di Caffè | Café & Restaurant in Al-Baha',
@@ -70,7 +87,7 @@
       title_rest: 'Restaurant Menu | Bocca',
       desc_rest: 'Salads and starters, pasta, pizza and risotto, steak, sushi and desserts.',
       brand: 'Bocca', skip: 'Skip to content', logoAria: 'Bocca - Home', navAria: 'Main navigation',
-      navAbout: 'About', navCafe: 'Café', navRest: 'Restaurant', navBranches: 'Branches', navContact: 'Contact', navOrder: 'Order now',
+      navHome: 'Home', navAbout: 'About', navCafe: 'Café', navRest: 'Restaurant', navBranches: 'Branches', navReviews: 'Reviews', navContact: 'Contact', navOrder: 'Order now',
       menuOpen: 'Open menu', langAria: 'التحويل إلى العربية', waFloat: 'Order on WhatsApp',
       waMsg: 'Hello, I would like to order from Bocca',
       openBadge: 'Open until midnight',
@@ -109,7 +126,24 @@
       restNote: 'Prices are in Saudi riyals. Calories are shown as listed on the restaurant menu.',
       empty: 'No items match your search. Try another word.',
       readyTitle: 'Ready to order?', readySub: 'Order on WhatsApp, give us a call, or use HungerStation.',
-      sar: 'SAR', kcal: 'kcal'
+      sar: 'SAR', kcal: 'kcal',
+      bestTitle: 'Best Sellers', bestSub: 'Guest favourites. Pick one and order.',
+      title_reviews: 'Guest Reviews | Bocca Di Caffè',
+      desc_reviews: 'Read what guests say about Bocca in Al-Baha: coffee, desserts and the restaurant. Share your own review on Google Maps.',
+      revTitle: 'Guest reviews', revSub: 'Words from people who visited Bocca. Your opinion matters and we read every review.',
+      revBtnGoogle: 'Review us on Google Maps', revBtnRead: 'Read the reviews', revAll: 'All', revBoth: 'Café & Restaurant',
+      revFilterAria: 'Filter reviews by section', revSortAria: 'Sort reviews', revSortNew: 'Newest', revSortTop: 'Top rated',
+      revStars: '{n} out of 5 stars', revMore: 'Read more', revLess: 'Show less', revShowMore: 'Show more reviews',
+      revEmpty: 'No reviews in this section yet.', revNone: 'Guest reviews will appear here soon.',
+      revSample: 'Sample', revFeatured: 'Featured review', revPhotoAlt: 'Photo from the guest visit',
+      srcGoogle: 'Google Maps', srcTiktok: 'TikTok', srcSnap: 'Snapchat', srcWa: 'WhatsApp', srcDirect: 'In person',
+      revCtaTitle: 'Visited Bocca? Share your thoughts', revCtaSub: 'Your review helps others choose and helps us improve.',
+      revCtaGoogle: 'Review us on Google Maps', revCtaGoogleSub: 'Takes a minute', revCtaWA: 'Send feedback', revCtaWAsub: 'On WhatsApp',
+      waFeedback: 'Hello, I have feedback about Bocca',
+      revPhotoOpen: 'View guest photos', lbClose: 'Close', lbPrev: 'Previous photo', lbNext: 'Next photo',
+      placeTitle: 'Visit Bocca in Al-Baha', placeSub: 'A calm spot with a lovely view: coffee, breakfast, desserts and a restaurant under one roof.',
+      placeImgAlt1: 'Bocca café exterior in Al-Baha', placeImgAlt2: 'Bocca di Caffè entrance and glass facade', placeBtn: 'View on map', placeReviews: 'Guest reviews',
+      ourPlace: 'Our place'
     }
   };
   function t(k) { var v = D[lang][k]; return v == null ? (D.ar[k] == null ? '' : D.ar[k]) : v; }
@@ -132,7 +166,8 @@
     $$('[data-call]').forEach(function (a) { if (B.phone) a.setAttribute('href', 'tel:' + B.phone); else a.hidden = true; });
     $$('[data-phone-text]').forEach(function (e) { e.textContent = B.phoneDisplay || ''; });
     $$('[data-hs]').forEach(function (a) { if (B.hungerStation) a.setAttribute('href', B.hungerStation); else a.hidden = true; });
-    $$('[data-wa]').forEach(function (a) { if (B.whatsapp) a.setAttribute('href', 'https://wa.me/' + B.whatsapp + '?text=' + encodeURIComponent(t('waMsg'))); else a.hidden = true; });
+    $$('[data-wa]').forEach(function (a) { if (B.whatsapp) a.setAttribute('href', 'https://wa.me/' + B.whatsapp + '?text=' + encodeURIComponent(t(a.getAttribute('data-wa-msg') || 'waMsg'))); else a.hidden = true; });
+    $$('[data-gr]').forEach(function (a) { if (B.googleReviews) a.setAttribute('href', B.googleReviews); else a.hidden = true; });
     $$('[data-social]').forEach(function (li) {
       var k = li.getAttribute('data-social'), a = $('a', li), u = $('[data-user]', li);
       if (B[k]) { a.setAttribute('href', B[k]); if (u) u.textContent = B[k + 'User'] || ''; } else li.hidden = true;
@@ -263,6 +298,186 @@
       window.scrollTo({ top: tg.getBoundingClientRect().top + window.pageYOffset - off, behavior: 'instant' });
     });
     if (search) search.addEventListener('input', filter);
+  }
+
+  /* ================= reviews page ================= */
+  var rvRoot = $('#revRoot');
+  if (rvRoot) {
+    var RV = (window.BOCCA_REVIEWS || []).slice();
+    var rvFilter = 'all', rvSort = 'new', rvShown = 9, RV_STEP = 9, rvAnimFrom = 0;
+    var rvChips = $('#revChips'), rvSortEl = $('#revSort'), rvBar = $('#revBar'), rvFeat = $('#revFeat'), rvMoreWrap = $('#revMore'), rvEmpty = $('#revEmpty');
+    var rvEsc = function (s) { return String(s == null ? '' : s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); };
+    var rvBg = ['#3A1E12', '#8A5A33', '#4B2A1B', '#A9703F', '#6B3F25'];
+    var rvSrc = { google: 'srcGoogle', tiktok: 'srcTiktok', snapchat: 'srcSnap', whatsapp: 'srcWa', direct: 'srcDirect' };
+    var rvSec = { cafe: 'navCafe', rest: 'navRest', both: 'revBoth' };
+    var rvName = function (r) { return (lang === 'en' && r.nameEn) ? r.nameEn : (r.name || ''); };
+    var rvText = function (r) { return lang === 'en' ? (r.textEn || r.text || '') : (r.text || r.textEn || ''); };
+    var rvPhotos = function (r) { return r.photos && r.photos.length ? r.photos : (r.photo ? [r.photo] : []); };
+    var rvIcon = '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="3"/><circle cx="9" cy="11" r="2"/><path d="m21 16-5-4-8 7"/></svg>';
+    var rvStars = function (r) { var n = Math.max(0, Math.min(5, Math.round(r.rating) || 0)); return '★★★★★'.slice(0, n) + '<span class="off">' + '★★★★★'.slice(0, 5 - n) + '</span>'; };
+    var rvAria = function (r) { return t('revStars').replace('{n}', Math.max(0, Math.min(5, Math.round(r.rating) || 0))); };
+    var rvDate = function (r) {
+      if (!r.date) return '';
+      var d = new Date(r.date + 'T00:00:00'); if (isNaN(d.getTime())) return '';
+      try { return new Intl.DateTimeFormat(lang === 'ar' ? 'ar-SA-u-ca-gregory' : 'en-US', { month: 'long', year: 'numeric' }).format(d); } catch (e) { return r.date; }
+    };
+    var rvMeta = function (r) { var p = []; if (r.source && rvSrc[r.source]) p.push(t(rvSrc[r.source])); var d = rvDate(r); if (d) p.push(d); return p.join(' · '); };
+    var rvAvatar = function (r) {
+      var n = rvName(r).trim(), ch = Array.from(n)[0] || '★', h = 0, i;
+      for (i = 0; i < n.length; i++) h += n.charCodeAt(i);
+      return '<span class="avatar" aria-hidden="true" style="--bg:' + rvBg[h % rvBg.length] + '">' + rvEsc(lang === 'en' ? ch.toUpperCase() : ch) + '</span>';
+    };
+    var rvInSec = function (r, k) { return k === 'all' || r.sec === k || r.sec === 'both'; };
+    var rvPool = function () { var f = rvFeatured(); return RV.filter(function (r) { return r !== f; }); };
+    var rvFeatured = function () { return RV.filter(function (r) { return r.featured; })[0] || null; };
+
+    var renderReviews = function () {
+      var feat = rvFeatured(), pool = rvPool();
+      var cnt = function (k) { return pool.filter(function (r) { return rvInSec(r, k); }).length; };
+
+      /* featured */
+      if (feat) {
+        rvFeat.hidden = false;
+        rvFeat.innerHTML = '<figure class="feat"><svg class="orn-bg" aria-hidden="true" focusable="false"><rect width="100%" height="100%" fill="url(#pat-star)"/></svg>' +
+          '<span class="feat-label">' + rvEsc(t('revFeatured')) + '</span>' +
+          '<blockquote dir="auto">' + rvEsc(rvText(feat)) + '</blockquote>' +
+          (rvPhotos(feat).length ? '<div class="feat-ph">' + rvPhotos(feat).slice(0, 3).map(function (p, pi) { return '<button type="button" data-ri="' + RV.indexOf(feat) + '" data-pi="' + pi + '" aria-label="' + rvEsc(t('revPhotoOpen')) + '"><img src="' + rvEsc(p) + '" alt="" loading="lazy" decoding="async"></button>'; }).join('') + '</div>' : '') +
+          '<figcaption>' + rvAvatar(feat) + '<span class="rwho"><b>' + rvEsc(rvName(feat)) + '</b><small>' + rvEsc(rvMeta(feat)) + '</small></span>' +
+          '<span class="rstars" role="img" aria-label="' + rvEsc(rvAria(feat)) + '">' + rvStars(feat) + '</span>' +
+          (feat.sample ? '<span class="rtag sample">' + rvEsc(t('revSample')) + '</span>' : '') + '</figcaption></figure>';
+      } else { rvFeat.hidden = true; rvFeat.innerHTML = ''; }
+
+      /* nothing at all */
+      if (!pool.length) {
+        rvBar.hidden = true; rvRoot.innerHTML = ''; rvMoreWrap.hidden = true;
+        rvEmpty.hidden = !!feat; rvEmpty.textContent = t('revNone'); return;
+      }
+      rvBar.hidden = false;
+
+      /* chips */
+      var defs = [['all', t('revAll')], ['cafe', t('navCafe')], ['rest', t('navRest')]];
+      rvChips.innerHTML = defs.map(function (d) {
+        return '<button class="chip' + (rvFilter === d[0] ? ' on' : '') + '" type="button" data-f="' + d[0] + '" aria-pressed="' + (rvFilter === d[0]) + '">' + rvEsc(d[1]) + '<small>' + cnt(d[0]) + '</small></button>';
+      }).join('');
+      rvSortEl.innerHTML = '<option value="new">' + rvEsc(t('revSortNew')) + '</option><option value="top">' + rvEsc(t('revSortTop')) + '</option>';
+      rvSortEl.value = rvSort;
+
+      /* list */
+      var list = pool.filter(function (r) { return rvInSec(r, rvFilter); });
+      list.sort(function (a, b) {
+        var da = a.date || '', db = b.date || '';
+        if (rvSort === 'top' && b.rating !== a.rating) return (b.rating || 0) - (a.rating || 0);
+        return da < db ? 1 : da > db ? -1 : 0;
+      });
+      var vis = list.slice(0, rvShown);
+      rvRoot.innerHTML = vis.map(function (r, idx) {
+        var txt = rvText(r), long = txt.length > 210, tag = rvSec[r.sec] ? t(rvSec[r.sec]) : '';
+        return '<article class="rcard' + (idx < rvAnimFrom ? ' still' : '') + '" style="--i:' + Math.max(0, idx - rvAnimFrom) + '">' +
+          (rvPhotos(r).length ? '<button class="rphoto-btn" type="button" data-ri="' + RV.indexOf(r) + '" data-pi="0" aria-label="' + rvEsc(t('revPhotoOpen')) + '"><img class="rphoto" src="' + rvEsc(rvPhotos(r)[0]) + '" alt="" loading="lazy" decoding="async">' + (rvPhotos(r).length > 1 ? '<span class="rcount">' + rvIcon + rvPhotos(r).length + '</span>' : '') + '</button>' : '') +
+          '<div class="rcard-b"><div class="rtop">' + rvAvatar(r) + '<span class="rwho"><b>' + rvEsc(rvName(r)) + '</b><small>' + rvEsc(rvMeta(r)) + '</small></span></div>' +
+          '<div class="rstars" role="img" aria-label="' + rvEsc(rvAria(r)) + '">' + rvStars(r) + '</div>' +
+          '<p class="rtext' + (long ? ' clamp' : '') + '" dir="auto">' + rvEsc(txt) + '</p>' +
+          (long ? '<button class="rmore" type="button" aria-expanded="false">' + rvEsc(t('revMore')) + '</button>' : '') +
+          ((tag || r.sample) ? '<div class="rfoot">' + (tag ? '<span class="rtag">' + rvEsc(tag) + '</span>' : '') + (r.sample ? '<span class="rtag sample">' + rvEsc(t('revSample')) + '</span>' : '') + '</div>' : '') +
+          '</div></article>';
+      }).join('');
+      rvEmpty.hidden = list.length > 0; rvEmpty.textContent = t('revEmpty');
+      rvMoreWrap.hidden = list.length <= rvShown;
+      var mb = $('button', rvMoreWrap); if (mb) mb.textContent = t('revShowMore');
+      rvAnimFrom = 1e9;   /* re-renders (language switch) don't replay the entrance */
+    };
+    renderMenu = renderReviews;
+
+    /* ---- photo viewer ---- */
+    var lb = null, lbImg, lbCap, lbPrev, lbNext, lbClose, lbR = 0, lbI = 0, lbFrom = null, lbX = null;
+    var lbShow = function () {
+      var ph = rvPhotos(RV[lbR]);
+      lbImg.src = ph[lbI]; lbImg.alt = t('revPhotoAlt');
+      lbCap.textContent = (ph.length > 1 ? (lbI + 1) + ' / ' + ph.length + ' · ' : '') + rvName(RV[lbR]);
+      lbPrev.hidden = lbNext.hidden = ph.length < 2;
+      lbClose.setAttribute('aria-label', t('lbClose')); lbPrev.setAttribute('aria-label', t('lbPrev')); lbNext.setAttribute('aria-label', t('lbNext'));
+    };
+    var lbStep = function (d) { var n = rvPhotos(RV[lbR]).length; if (n < 2) return; lbI = (lbI + d + n) % n; lbShow(); };
+    var lbOff = function () { if (!lb || lb.hidden) return; lb.hidden = true; document.body.style.overflow = ''; if (lbFrom && lbFrom.focus) lbFrom.focus(); };
+    var lbOpen = function (ri, pi, from) {
+      if (!lb) {
+        lb = document.createElement('div'); lb.className = 'lb'; lb.hidden = true; lb.setAttribute('role', 'dialog'); lb.setAttribute('aria-modal', 'true');
+        lb.innerHTML = '<button class="lb-x" type="button"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button>' +
+          '<button class="lb-nav lb-prev" type="button"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 5-7 7 7 7"/></svg></button>' +
+          '<figure class="lb-fig"><img alt=""><figcaption></figcaption></figure>' +
+          '<button class="lb-nav lb-next" type="button"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 7 7-7 7"/></svg></button>';
+        document.body.appendChild(lb);
+        lbImg = $('img', lb); lbCap = $('figcaption', lb); lbPrev = $('.lb-prev', lb); lbNext = $('.lb-next', lb); lbClose = $('.lb-x', lb);
+        lbClose.addEventListener('click', lbOff);
+        lbPrev.addEventListener('click', function () { lbStep(-1); }); lbNext.addEventListener('click', function () { lbStep(1); });
+        lb.addEventListener('click', function (e) { if (e.target === lb || e.target.classList.contains('lb-fig')) lbOff(); });
+        lb.addEventListener('touchstart', function (e) { lbX = e.touches[0].clientX; }, { passive: true });
+        lb.addEventListener('touchend', function (e) {
+          if (lbX === null) return; var dx = e.changedTouches[0].clientX - lbX; lbX = null;
+          if (Math.abs(dx) > 50) lbStep((dx < 0) === (document.documentElement.dir !== 'rtl') ? 1 : -1);
+        });
+        document.addEventListener('keydown', function (e) {
+          if (lb.hidden) return;
+          if (e.key === 'Escape') { lbOff(); return; }
+          if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') { var s = e.key === 'ArrowRight' ? 1 : -1; lbStep(document.documentElement.dir === 'rtl' ? -s : s); return; }
+          if (e.key === 'Tab') {
+            var f = [lbClose, lbPrev, lbNext].filter(function (b) { return !b.hidden; }), i = f.indexOf(document.activeElement);
+            e.preventDefault(); f[(i + (e.shiftKey ? -1 : 1) + f.length) % f.length].focus();
+          }
+        });
+      }
+      lbR = ri; lbI = pi; lbFrom = from; lbShow(); lb.hidden = false; document.body.style.overflow = 'hidden'; lbClose.focus();
+    };
+    var lbClick = function (e) {
+      var b = e.target.closest ? e.target.closest('[data-ri]') : null; if (!b) return;
+      lbOpen(+b.getAttribute('data-ri'), +b.getAttribute('data-pi') || 0, b);
+    };
+    rvRoot.addEventListener('click', lbClick); rvFeat.addEventListener('click', lbClick);
+
+    rvChips.addEventListener('click', function (e) {
+      var b = e.target.closest ? e.target.closest('.chip') : null; if (!b) return;
+      rvFilter = b.getAttribute('data-f'); rvShown = RV_STEP; rvAnimFrom = 0; renderReviews();
+    });
+    rvSortEl.addEventListener('change', function () { rvSort = rvSortEl.value; rvShown = RV_STEP; rvAnimFrom = 0; renderReviews(); });
+    $('button', rvMoreWrap).addEventListener('click', function () { rvAnimFrom = rvShown; rvShown += RV_STEP; renderReviews(); });
+    rvRoot.addEventListener('click', function (e) {
+      var b = e.target.closest ? e.target.closest('.rmore') : null; if (!b) return;
+      var p = b.previousElementSibling, open = p.classList.toggle('clamp') === false;
+      b.setAttribute('aria-expanded', open); b.textContent = t(open ? 'revLess' : 'revMore');
+    });
+  }
+
+  /* ================= home: reviews strip + best sellers ================= */
+  var proofEl = $('#proofQuotes'), bestEl = $('#bestRow');
+  if (proofEl || bestEl) {
+    var hEsc = function (s) { return String(s == null ? '' : s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); };
+    var hFmt = function (p) { return (Math.round(p * 100) % 100 === 0) ? String(Math.round(p)) : p.toFixed(1); };
+    var hFind = function (img) {
+      var r = null;
+      ['cafe', 'rest'].forEach(function (k) { ((M && M[k]) || []).forEach(function (c) { c.items.forEach(function (it) { if (!r && it.img === img) r = { it: it, sec: k }; }); }); });
+      return r;
+    };
+    renderMenu = function () {
+      if (proofEl) {
+        var all = (window.BOCCA_REVIEWS || []).filter(function (r) { return !r.sample && r.rating >= 4; });
+        var pick = all.filter(function (r) { return r.strip; }).slice(0, 3);
+        if (!pick.length) pick = all.slice().sort(function (a, b) { return (a.text || '').length - (b.text || '').length; }).slice(0, 3);
+        proofEl.hidden = !pick.length;
+        proofEl.innerHTML = pick.map(function (r) {
+          var txt = lang === 'en' ? (r.textEn || r.text || '') : (r.text || r.textEn || ''), nm = (lang === 'en' && r.nameEn) ? r.nameEn : (r.name || '');
+          return '<figure class="q"><blockquote dir="auto">' + hEsc(txt) + '</blockquote><figcaption><span class="st" aria-hidden="true">★★★★★</span><span>' + hEsc(nm) + '</span></figcaption></figure>';
+        }).join('');
+      }
+      if (bestEl) {
+        var list = ((B.bestSellers || []).map(hFind)).filter(Boolean), sec = $('#best');
+        if (sec) sec.hidden = !list.length;
+        bestEl.innerHTML = list.map(function (o) {
+          var it = o.it, name = lang === 'ar' ? it.ar : (it.en || it.ar);
+          return '<a class="card best-card" href="' + (o.sec === 'cafe' ? 'cafe.html' : 'restaurant.html') + '"><div class="ph"><img src="' + it.img + '" alt="' + hEsc(name) + '" loading="lazy" decoding="async" width="640" height="640"></div>' +
+            '<div class="card-b"><h3>' + hEsc(name) + '</h3><div class="card-f"><span class="price">' + hFmt(it.price) + '<small>' + hEsc(t('sar')) + '</small></span></div></div></a>';
+        }).join('');
+      }
+    };
   }
 
   applyLang(); if (renderMenu) renderMenu();

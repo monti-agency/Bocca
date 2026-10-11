@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>قائمة الكافيه | بوكا</title>
+<meta name="description" content="قهوة مختصة، مشروبات باردة وساخنة، فطور، مخبوزات وحلويات.">
+<meta name="theme-color" content="#3A1E12">
+<link rel="icon" type="image/png" href="assets/img/favicon.png">
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+<meta property="og:type" content="website"><meta property="og:site_name" content="بوكا | Bocca Di Caffè">
+<meta property="og:title" content="قائمة الكافيه | بوكا"><meta property="og:description" content="قهوة مختصة، مشروبات باردة وساخنة، فطور، مخبوزات وحلويات.">
+<meta property="og:image" content="assets/img/logo-512.png"><meta property="og:locale" content="ar_SA"><meta property="og:locale:alternate" content="en_US">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+<script>
+(function () {
+  var l = 'ar', q = null, s = null;
+  try { q = new URLSearchParams(location.search).get('lang'); } catch (e) {}
+  try { s = localStorage.getItem('bocca_lang'); } catch (e) {}
+  if (q === 'en' || q === 'ar') l = q; else if (s === 'en' || s === 'ar') l = s;
+  var d = document.documentElement;
+  d.lang = l; d.dir = (l === 'ar') ? 'rtl' : 'ltr'; d.classList.add('js');
+  try { if (sessionStorage.getItem('bocca_pre')) d.classList.add('nopre'); } catch (e) {}
+  window.__B_LANG = l;
+})();
+</script>
+<link rel="stylesheet" href="assets/style.css">
+<style>
+:root{--nav-h:0px}
+.mh{background:var(--choc);color:var(--cream);padding:max(10px,env(safe-area-inset-top)) 0 10px}
+.mh-in{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.mh .logo{color:var(--cream)}
+.mh-act{display:flex;align-items:center;gap:8px}
+.mh-sw{border:1.5px solid var(--accent);border-radius:999px;padding:5px 14px;color:var(--accent-2);text-decoration:none;font-weight:700;font-size:.9rem}
+.mh-title{background:var(--choc);color:var(--cream);text-align:center;padding:4px 0 22px}
+.mh-title h1{margin:0;font-size:clamp(2rem,8vw,2.8rem);line-height:1.2}
+.mh-title .hero-en{margin:2px 0 0;font-size:.8rem;letter-spacing:.14em;color:var(--accent-2);direction:ltr}
+.mf{text-align:center;padding:22px 0 calc(22px + env(safe-area-inset-bottom));background:var(--choc);color:var(--cream);font-size:.85rem;opacity:.95}
+.mf p{margin:0}
+</style>
+
+</head>
+<body id="top" data-pg="cafe" data-sec="cafe" data-menu="cafe">
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <linearGradient id="gold-grad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#E3C5A5"/><stop offset="1" stop-color="#C08B5C"/></linearGradient>
+    <symbol id="star8" viewBox="0 0 24 24"><rect x="5" y="5" width="14" height="14" stroke-linejoin="round"/><path d="M12 1.5 22.5 12 12 22.5 1.5 12z" stroke-linejoin="round"/><circle cx="12" cy="12" r="2.2"/></symbol>
+    <pattern id="pat-star" width="80" height="80" patternUnits="userSpaceOnUse">
+      <g fill="none" stroke="#C08B5C" stroke-width="1"><rect x="20" y="20" width="40" height="40"/><path d="M40 6 74 40 40 74 6 40z"/><circle cx="40" cy="40" r="5"/></g>
+      <g fill="#C08B5C"><circle cx="0" cy="0" r="2"/><circle cx="80" cy="0" r="2"/><circle cx="0" cy="80" r="2"/><circle cx="80" cy="80" r="2"/></g>
+    </pattern>
+  </defs>
+</svg>
+<header class="mh"><div class="container mh-in">
+  <span class="logo"><span class="logo-img" role="img" aria-label="Bocca logo"></span><span class="logo-text"><span data-i18n="brand">بوكا</span><small>Bocca Di Caffè</small></span></span>
+  <div class="mh-act"><a class="mh-sw" href="menu-restaurant.html" data-i18n="restTitle">.</a><button class="lang" id="langBtn" type="button">EN</button></div>
+</div></header>
+<div class="mh-title"><div class="container"><h1 data-i18n="cafeTitle">.</h1><p class="hero-en">Bocca Café Menu</p></div></div>
+<main id="main">
+<div class="menu-bar" id="menuBar"><div class="container">
+  <div class="search"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4.5 4.5"/></svg><input type="search" id="menuSearch" data-i18n-ph="searchPh" placeholder="ابحث في القائمة…" data-i18n-aria="searchAria" aria-label="ابحث في القائمة" autocomplete="off" enterkeyhint="search"></div>
+  <nav class="chips" id="chips" data-i18n-aria="chipsAria" aria-label="أقسام القائمة"></nav>
+</div></div>
+<section class="section menu-sec"><div class="container">
+  <p class="menu-note" data-i18n="cafeNote">الأسعار بالريال السعودي وتشمل ضريبة القيمة المضافة 15%.</p>
+  <div id="menuRoot"></div><p class="empty" id="empty" hidden data-i18n="empty">ما لقينا صنف بهذا الاسم. جرّب كلمة ثانية.</p>
+</div></section>
+
+</main>
+<footer class="mf"><div class="container"><p data-i18n="copy">©</p></div></footer>
+
+<script src="assets/config.js"></script>
+<script src="assets/menu-data.js"></script>
+<script src="assets/supabase-config.js"></script>
+<script src="assets/menu-live.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>

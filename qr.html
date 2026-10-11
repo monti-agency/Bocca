@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Bocca QR Codes</title>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@500;700;800&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js"></script>
+<style>
+body{margin:0;font-family:Tajawal,system-ui,sans-serif;background:#F6F1E9;color:#2A160D;padding:18px}
+.w{max-width:760px;margin:auto}h1{margin:0 0 14px;color:#3A1E12}
+label{display:block;font-weight:700;margin:12px 0 4px}
+input[type=text]{width:100%;padding:12px;border:1.5px solid #C08B5C;border-radius:10px;font-size:1rem;box-sizing:border-box;background:#fff}
+small{opacity:.7}.row{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px;margin-top:18px}
+.card{background:#fff;border-radius:16px;padding:12px;box-shadow:0 6px 20px -10px #3A1E12}
+canvas{width:100%;height:auto;border-radius:10px}
+button{width:100%;margin-top:10px;padding:13px;border:0;border-radius:999px;background:#3A1E12;color:#E3C5A5;font:700 1rem Tajawal,sans-serif}
+#msg{margin-top:10px;color:#8A5A33}
+</style></head><body><div class="w">
+<h1>Bocca QR Codes</h1>
+<label>Website link</label>
+<input type="text" id="base" placeholder="https://your-website.com" dir="ltr">
+<label>Logo <small>(loads automatically from your site; or choose the file)</small></label>
+<input type="file" id="logoFile" accept="image/*">
+<div id="msg"></div>
+<div class="row">
+ <div class="card"><canvas id="c1" width="1000" height="1300"></canvas><button data-c="c1" data-n="bocca-qr-restaurant">Download Restaurant QR</button></div>
+ <div class="card"><canvas id="c2" width="1000" height="1300"></canvas><button data-c="c2" data-n="bocca-qr-cafe">Download Café QR</button></div>
+</div></div>
+<script>
+var CH='#3A1E12',GOLD='#C08B5C',CREAM='#F6F1E9',logo=null;
+var items=[{c:'c1',path:'menu-restaurant.html',ar:'قائمة المطعم',en:'Restaurant Menu'},{c:'c2',path:'menu-cafe.html',ar:'قائمة الكافيه',en:'Café Menu'}];
+var base=document.getElementById('base'),msg=document.getElementById('msg');
+if(/^https?:/.test(location.protocol)){base.value=location.href.replace(/[^\/]*$/,'')}
+function rr(x,a,b,w,h,r){x.beginPath();x.roundRect?x.roundRect(a,b,w,h,r):x.rect(a,b,w,h)}
+function draw(it){
+  var cv=document.getElementById(it.c),x=cv.getContext('2d'),W=1000,H=1300;
+  var u=base.value.trim();if(u&&!/^https?:\/\//.test(u))u='https://'+u;
+  x.clearRect(0,0,W,H);x.fillStyle=CREAM;x.fillRect(0,0,W,H);
+  x.strokeStyle=CH;x.lineWidth=8;rr(x,28,28,W-56,H-56,40);x.stroke();
+  x.strokeStyle=GOLD;x.lineWidth=2;rr(x,48,48,W-96,H-96,28);x.stroke();
+  x.textAlign='center';x.fillStyle=CH;
+  x.font='800 78px Tajawal,sans-serif';x.fillText(it.ar,W/2,185);
+  x.fillStyle=GOLD;x.font='700 38px Tajawal,sans-serif';x.fillText(it.en.toUpperCase(),W/2,245);
+  var S=640,X=(W-S)/2,Y=320;
+  x.fillStyle='#fff';x.strokeStyle=GOLD;x.lineWidth=5;rr(x,X-28,Y-28,S+56,S+56,34);x.fill();x.stroke();
+  if(u&&window.qrcode){
+    var q=qrcode(0,'H');q.addData(u+(u.slice(-1)=='/'?'':'/')+it.path);q.make();
+    var n=q.getModuleCount(),m=S/n,cx=X+S/2,cy=Y+S/2,R=S*0.125;
+    x.fillStyle=CH;
+    for(var r=0;r<n;r++)for(var c=0;c<n;c++){
+      if(!q.isDark(r,c))continue;var px=X+c*m+m/2,py=Y+r*m+m/2;
+      if(logo&&Math.hypot(px-cx,py-cy)<R+m*1.2)continue;
+      rr(x,X+c*m+.5,Y+r*m+.5,m-1,m-1,m*.3);x.fill();
+    }
+    if(logo){
+      x.fillStyle=CREAM;x.beginPath();x.arc(cx,cy,R+10,0,7);x.fill();
+      x.strokeStyle=GOLD;x.lineWidth=5;x.stroke();
+      x.save();x.beginPath();x.arc(cx,cy,R,0,7);x.clip();x.drawImage(logo,cx-R,cy-R,2*R,2*R);x.restore();
+    }
+  }else{x.fillStyle='#bbb';x.font='500 34px Tajawal,sans-serif';x.fillText('Enter the website link',W/2,Y+S/2)}
+  x.fillStyle=CH;x.font='800 54px Tajawal,sans-serif';x.fillText('امسح الرمز لعرض القائمة',W/2,1090);
+  x.fillStyle=GOLD;x.font='700 34px Tajawal,sans-serif';x.fillText('SCAN TO VIEW THE MENU',W/2,1145);
+  x.fillStyle=CH;x.font='700 30px Tajawal,sans-serif';x.fillText('بوكا · Bocca Di Caffè · الباحة',W/2,1215);
+}
+function all(){items.forEach(draw)}
+function setLogo(src){var i=new Image();i.onload=function(){logo=i;msg.textContent='';all()};i.onerror=function(){msg.textContent='Logo not found automatically. Choose the logo file above.';all()};i.src=src}
+document.getElementById('logoFile').onchange=function(e){var f=e.target.files[0];if(f)setLogo(URL.createObjectURL(f))};
+base.oninput=all;
+document.querySelectorAll('button').forEach(function(b){b.onclick=function(){
+  try{var a=document.createElement('a');a.href=document.getElementById(b.dataset.c).toDataURL('image/png');a.download=b.dataset.n+'.png';a.click()}
+  catch(e){msg.textContent='Could not export. Choose the logo file above, then try again.'}}});
+(document.fonts&&document.fonts.load?document.fonts.load('800 60px Tajawal').then(all,all):all());
+setLogo('assets/img/logo-512.png');
+</script></body></html>

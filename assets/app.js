@@ -496,8 +496,8 @@ function boccaBoot() {
       sc: SV('<path d="M12 3c-3 0-5 2.2-5 5v3l-2 2 2 .8c.5 1 1.3 1.6 2.4 1.9L9 18l3-1 3 1-.4-2.3c1.1-.3 1.9-.9 2.4-1.9l2-.8-2-2V8c0-2.8-2-5-5-5z"/>'),
       ig: SV('<rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1" fill="currentColor" stroke="none"/>')
     };
-    /* links come from config.js (tiktokCafe, tiktokRest, snapchat, instagram); the first three fall back to the pages listed in the site data */
-    var S = [['tiktokCafe', 'https://www.tiktok.com/@bocca_caffe', 'tkCafe', 'tt'], ['tiktokRest', 'https://www.tiktok.com/@bocca.restaurant1', 'tkRest', 'tt'], ['snapchat', 'https://www.snapchat.com/@bocca_caffe', 'snap', 'sc'], ['instagram', '', 'ig', 'ig']];
+    /* links come from config.js (tiktokCafe, tiktokRest, snapchat, instagram); they fall back to the pages listed here if config.js has none */
+    var S = [['tiktokCafe', 'https://www.tiktok.com/@bocca_caffe', 'tkCafe', 'tt'], ['tiktokRest', 'https://www.tiktok.com/@bocca.restaurant1', 'tkRest', 'tt'], ['snapchat', 'https://www.snapchat.com/@bocca_caffe', 'snap', 'sc'], ['instagram', 'https://www.instagram.com/boccarestaurantcafe/', 'ig', 'ig']];
     var row = document.createElement('div'); row.className = 'soc';
     S.forEach(function (s) { var u = B[s[0]] || s[1]; if (!u) return; row.innerHTML += '<a href="' + X(u) + '" target="_blank" rel="noopener noreferrer">' + IC[s[3]] + '<span>' + X(t(s[2])) + '</span></a>'; });
     if (!row.children.length) return;

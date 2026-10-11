@@ -1,4 +1,4 @@
-(function () {
+function boccaBoot() {
   'use strict';
   var B = window.BOCCA || {};
   var $ = function (s, r) { return (r || document).querySelector(s); };
@@ -481,4 +481,5 @@
   }
 
   applyLang(); if (renderMenu) renderMenu();
-})();
+}
+(window.BOCCA_MENU_READY ? window.BOCCA_MENU_READY.then(boccaBoot, boccaBoot) : boccaBoot());

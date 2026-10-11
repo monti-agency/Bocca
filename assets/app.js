@@ -277,13 +277,13 @@ function boccaBoot() {
         var main = isAr() ? c.ar : (c.en || c.ar), sub = isAr() ? c.en : c.ar;
         chips += '<button class="chip' + (ci === 0 ? ' on' : '') + '" type="button" data-t="' + c.id + '">' + esc(main) + '</button>';
         html += '<section class="cat" id="cat-' + c.id + '" data-cat="' + c.id + '"><div class="cat-head"><h2>' + esc(main) + '</h2><small dir="' + (isAr() ? 'ltr' : 'rtl') + '">' + esc(sub) + '</small><span class="n">' + c.items.length + ' ' + esc(t('items')) + '</span></div><div class="grid">';
-        c.items.forEach(function (it) {
+        c.items.forEach(function (it, ii) {
           var name = isAr() ? it.ar : (it.en || it.ar), sub2 = isAr() ? (it.en || '') : it.ar;
           var q = norm(it.ar + ' ' + (it.en || '') + ' ' + (it.desc || ''));
           html += '<article class="card" data-q="' + esc(q) + '"><div class="ph' + (it.img ? '' : ' none') + '">' + (it.img ? '<img src="' + it.img + '" alt="' + esc(name) + '" loading="lazy" decoding="async" width="640" height="480">' : '') + '</div><div class="card-b"><h3>' + esc(name) + '</h3>' +
             (sub2 && sub2.trim() !== name.trim() ? '<span class="en" dir="' + (isAr() ? 'ltr' : 'rtl') + '">' + esc(sub2) + '</span>' : '') +
             (it.desc && isAr() ? '<p class="desc">' + esc(it.desc) + '</p>' : '') +
-            '<div class="card-f"><span class="price">' + fmt(it.price) + '<small>' + esc(priceUnit) + '</small></span>' + (it.cal ? '<span class="cal">' + it.cal + ' ' + esc(t('kcal')) + '</span>' : '') + '</div></div></article>';
+            '<div class="card-f"><span class="price">' + fmt(it.price) + '<small>' + esc(priceUnit) + '</small></span>' + (it.cal ? '<span class="cal">' + it.cal + ' ' + esc(t('kcal')) + '</span>' : '') + '<button class="add" type="button" data-ci="' + ci + '" data-ii="' + ii + '">+</button></div></div></article>';
         });
         html += '</div></section>';
       });
@@ -479,6 +479,93 @@ function boccaBoot() {
       }
     };
   }
+
+  /* ================= order cart + footer social buttons (added) ================= */
+  Object.assign(D.ar, { cartT: 'سلة الطلب', cartAdd: 'أضف للسلة', cartEmpty: 'السلة فاضية. أضف أصنافك من القائمة.', cartTotal: 'الإجمالي', cartNote: 'ملاحظات أو رقم الطاولة (اختياري)', cartSend: 'أرسل الطلب عبر واتساب', cartClear: 'تفريغ السلة', ig: 'إنستغرام' });
+  Object.assign(D.en, { cartT: 'Your order', cartAdd: 'Add to cart', cartEmpty: 'Your cart is empty. Add items from the menu.', cartTotal: 'Total', cartNote: 'Notes or table number (optional)', cartSend: 'Send order via WhatsApp', cartClear: 'Clear cart', ig: 'Instagram' });
+  var X = function (s) { return String(s == null ? '' : s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); };
+  var F = function (n) { return Math.round(n * 100) % 100 === 0 ? String(Math.round(n)) : n.toFixed(1); };
+  var SV = function (p) { return '<svg viewBox="0 0 24 24" aria-hidden="true">' + p + '</svg>'; };
+  var cartUI = function () {};
+
+  var socials = function () {
+    var ft = $('footer'); if (!ft) return;
+    var old = $('.soc', ft); if (old) old.parentNode.removeChild(old);
+    var IC = {
+      tt: SV('<path d="M14 4v10.5a3.5 3.5 0 1 1-3.5-3.5"/><path d="M14 4c.4 2.4 2 4 4.5 4.2"/>'),
+      sc: SV('<path d="M12 3c-3 0-5 2.2-5 5v3l-2 2 2 .8c.5 1 1.3 1.6 2.4 1.9L9 18l3-1 3 1-.4-2.3c1.1-.3 1.9-.9 2.4-1.9l2-.8-2-2V8c0-2.8-2-5-5-5z"/>'),
+      ig: SV('<rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1" fill="currentColor" stroke="none"/>')
+    };
+    /* links come from config.js (tiktokCafe, tiktokRest, snapchat, instagram); the first three fall back to the pages listed in the site data */
+    var S = [['tiktokCafe', 'https://www.tiktok.com/@bocca_caffe', 'tkCafe', 'tt'], ['tiktokRest', 'https://www.tiktok.com/@bocca.restaurant1', 'tkRest', 'tt'], ['snapchat', 'https://www.snapchat.com/@bocca_caffe', 'snap', 'sc'], ['instagram', '', 'ig', 'ig']];
+    var row = document.createElement('div'); row.className = 'soc';
+    S.forEach(function (s) { var u = B[s[0]] || s[1]; if (!u) return; row.innerHTML += '<a href="' + X(u) + '" target="_blank" rel="noopener noreferrer">' + IC[s[3]] + '<span>' + X(t(s[2])) + '</span></a>'; });
+    if (!row.children.length) return;
+    var fs = $('.foot-social', ft);
+    if (fs && fs.parentNode) fs.parentNode.insertAdjacentElement('afterend', row); else ft.appendChild(row);
+  };
+
+  (function () {
+    var rootEl = $('#menuRoot'), sec = document.body.getAttribute('data-menu');
+    if (!rootEl || !M || !sec) return;
+    var d = document, KEY = 'bocca_cart', cart = [];
+    try { cart = JSON.parse(localStorage.getItem(KEY) || '[]'); } catch (e) {}
+    if (!Array.isArray(cart)) cart = [];
+    var save = function () { try { localStorage.setItem(KEY, JSON.stringify(cart)); } catch (e) {} };
+    var fab = d.createElement('button'); fab.className = 'cart-fab'; fab.type = 'button'; fab.hidden = true;
+    var ov = d.createElement('div'); ov.className = 'cart-ov';
+    ov.innerHTML = '<div class="cart-pn" role="dialog" aria-modal="true"><div class="cart-h"><h3 id="cT"></h3><button type="button" class="cart-x" aria-label="X">×</button></div><div class="cart-l" id="cL"></div><div class="cart-f"><input type="text" id="cN" maxlength="140"><div class="cart-t"><span id="cTL"></span><b id="cTV"></b></div><a class="btn btn-gold cart-s" id="cS" target="_blank" rel="noopener noreferrer"></a><button type="button" class="cart-c" id="cC"></button></div></div>';
+    d.body.appendChild(fab); d.body.appendChild(ov);
+    var open = function (on) { ov.classList.toggle('on', on); d.body.style.overflow = on ? 'hidden' : ''; };
+    var tot = function () { var n = 0, s = 0; cart.forEach(function (c) { n += c.q; s += c.q * c.p; }); return { n: n, s: s }; };
+    var msg = function () {
+      var by = {}, L = ['*طلب جديد من الموقع*'], T = tot();
+      cart.forEach(function (c) { (by[c.s] = by[c.s] || []).push(c); });
+      Object.keys(by).forEach(function (s) { L.push('', '*' + (s === 'rest' ? 'المطعم' : 'الكافيه') + '*'); by[s].forEach(function (c) { L.push('• ' + c.q + ' × ' + c.ar + ' — ' + F(c.p * c.q) + ' ريال'); }); });
+      L.push('', 'الإجمالي: ' + F(T.s) + ' ريال');
+      var n = $('#cN', ov).value.trim(); if (n) L.push('ملاحظات: ' + n);
+      return L.join('\n');
+    };
+    var render = function () {
+      var T = tot(), unit = t('sar');
+      fab.hidden = T.n === 0;
+      fab.innerHTML = SV('<path d="M3 4h2.5l2 11h10l2-8H7"/><circle cx="9.5" cy="19.5" r="1.4"/><circle cx="17" cy="19.5" r="1.4"/>') + '<span class="cart-n">' + T.n + '</span><span>' + F(T.s) + ' ' + X(unit) + '</span>';
+      fab.setAttribute('aria-label', t('cartT'));
+      $('#cT', ov).textContent = t('cartT'); $('#cTL', ov).textContent = t('cartTotal'); $('#cC', ov).textContent = t('cartClear');
+      $('#cN', ov).setAttribute('placeholder', t('cartNote')); $('#cTV', ov).textContent = F(T.s) + ' ' + unit;
+      $('#cL', ov).innerHTML = cart.length ? cart.map(function (c, i) {
+        var nm = lang === 'ar' ? c.ar : (c.en || c.ar);
+        return '<div class="cart-r"><div class="cart-i"><b>' + X(nm) + '</b><small>' + F(c.p) + ' ' + X(unit) + '</small></div><div class="cart-q"><button type="button" data-i="' + i + '" data-d="-1" aria-label="-">−</button><span>' + c.q + '</span><button type="button" data-i="' + i + '" data-d="1" aria-label="+">+</button></div><b class="cart-p">' + F(c.p * c.q) + '</b></div>';
+      }).join('') : '<p class="cart-e">' + X(t('cartEmpty')) + '</p>';
+      var s = $('#cS', ov), ok = !!B.whatsapp && cart.length > 0;
+      s.style.display = ok ? '' : 'none'; s.textContent = t('cartSend');
+      if (ok) s.setAttribute('href', 'https://wa.me/' + B.whatsapp + '?text=' + encodeURIComponent(msg()));
+      $$('.add').forEach(function (b) { b.setAttribute('aria-label', t('cartAdd')); });
+      if (!cart.length) open(false);
+    };
+    rootEl.addEventListener('click', function (e) {
+      var b = e.target.closest ? e.target.closest('.add') : null; if (!b) return;
+      var c0 = (M[sec] || [])[+b.getAttribute('data-ci')], it = c0 && c0.items[+b.getAttribute('data-ii')]; if (!it) return;
+      var k = sec + '|' + it.ar, f = cart.filter(function (c) { return c.k === k; })[0];
+      if (f) f.q++; else cart.push({ k: k, s: sec, ar: it.ar, en: it.en || '', p: it.price, q: 1 });
+      save(); render(); fab.classList.remove('bump'); void fab.offsetWidth; fab.classList.add('bump');
+    });
+    fab.addEventListener('click', function () { open(true); });
+    ov.addEventListener('click', function (e) {
+      if (e.target === ov || (e.target.classList && e.target.classList.contains('cart-x'))) { open(false); return; }
+      var b = e.target.closest ? e.target.closest('[data-d]') : null; if (!b) return;
+      var i = +b.getAttribute('data-i'), c = cart[i]; if (!c) return;
+      c.q += +b.getAttribute('data-d'); if (c.q < 1) cart.splice(i, 1);
+      save(); render();
+    });
+    $('#cC', ov).addEventListener('click', function () { cart = []; save(); render(); });
+    $('#cN', ov).addEventListener('input', render);
+    d.addEventListener('keydown', function (e) { if (e.key === 'Escape') open(false); });
+    cartUI = render;
+  })();
+
+  var _rm = renderMenu;
+  renderMenu = function () { if (_rm) _rm(); cartUI(); socials(); };
 
   applyLang(); if (renderMenu) renderMenu();
 }
